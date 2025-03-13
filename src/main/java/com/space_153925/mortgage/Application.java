@@ -8,12 +8,21 @@ public class Application implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Years of amortization")
+	@org.kie.api.definition.type.Label("Years of amortization")
 	private java.lang.Integer amortization;
-	@org.kie.api.definition.type.Label(value = "Applicant")
+	@org.kie.api.definition.type.Label("Applicant")
 	private com.space_153925.mortgage.Applicant applicant;
-	@org.kie.api.definition.type.Label(value = "Down Payment")
+	@org.kie.api.definition.type.Label("Down Payment")
 	private java.lang.Integer downpayment;
+
+	@org.kie.api.definition.type.Label(value = "Error details")
+	private com.space_153925.mortgage.ValidationErrorDO errors;
+
+	@org.kie.api.definition.type.Label(value = "Mortgage amount")
+	private java.lang.Integer mortgageamount;
+
+	@org.kie.api.definition.type.Label(value = "Property")
+	private com.space_153925.mortgage.Property property;
 
 	public Application() {
 	}
@@ -42,12 +51,42 @@ public class Application implements java.io.Serializable {
 		this.downpayment = downpayment;
 	}
 
+	public com.space_153925.mortgage.ValidationErrorDO getErrors() {
+		return this.errors;
+	}
+
+	public void setErrors(com.space_153925.mortgage.ValidationErrorDO errors) {
+		this.errors = errors;
+	}
+
+	public java.lang.Integer getMortgageamount() {
+		return this.mortgageamount;
+	}
+
+	public void setMortgageamount(java.lang.Integer mortgageamount) {
+		this.mortgageamount = mortgageamount;
+	}
+
+	public com.space_153925.mortgage.Property getProperty() {
+		return this.property;
+	}
+
+	public void setProperty(com.space_153925.mortgage.Property property) {
+		this.property = property;
+	}
+
 	public Application(java.lang.Integer amortization,
 			com.space_153925.mortgage.Applicant applicant,
-			java.lang.Integer downpayment) {
+			java.lang.Integer downpayment,
+			com.space_153925.mortgage.ValidationErrorDO errors,
+			java.lang.Integer mortgageamount,
+			com.space_153925.mortgage.Property property) {
 		this.amortization = amortization;
 		this.applicant = applicant;
 		this.downpayment = downpayment;
+		this.errors = errors;
+		this.mortgageamount = mortgageamount;
+		this.property = property;
 	}
 
 }
